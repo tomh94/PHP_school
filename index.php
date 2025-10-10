@@ -18,25 +18,43 @@ $post1 = [
     "saves"=> "number",
     "views" => "number",
 ];
-
 $post2 = [
-    "title" => "hello world",
-    "content" => "this is my content",
-    "tags" => ["php", "html", "css", "js"],
-    "comments" => [
-        ["author" => "John Doe", "content" => "great post"],
-        ["author" => "jane", "content" => "fame"],
+    "postID" => "hello world",
+    "captions" => "this is my content",
+    "hashtags" => ["php", "html", "css", "js"],
+    "user" =>[
+        "name" => "tomas",
+        "picture" => "this is my content",
     ],
+    "likesNumber" => "50",
+    "comments" =>[
+        "author" => "this is my content",
+        "authorPicture" => "this is my content",
+        "content" => "this is my content",
+    ],
+    "picture" => "this is my content",
+    "saves"=> "number",
+    "views" => "number",
 ];
 $post3 = [
-    "title" => "hello world",
-    "content" => "this is my content",
-    "tags" => ["php", "html", "css", "js"],
-    "comments" => [
-        ["author" => "John Doe", "content" => "great post"],
-        ["author" => "jane", "content" => "fame"],
+    "postID" => "hello world",
+    "captions" => "this is my content",
+    "hashtags" => ["php", "html", "css", "js"],
+    "user" =>[
+        "name" => "tomas",
+        "picture" => "this is my content",
     ],
+    "likesNumber" => "50",
+    "comments" =>[
+        "author" => "this is my content",
+        "authorPicture" => "this is my content",
+        "content" => "this is my content",
+    ],
+    "picture" => "this is my content",
+    "saves"=> "number",
+    "views" => "number",
 ];
+
 
 $posts = [$post1, $post2, $post3];
 
