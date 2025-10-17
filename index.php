@@ -71,7 +71,7 @@ $post3 = [
         "captions" => "this is my content, this content is realy long beacouse i want to trz it",
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
-                "name" => "tomas",
+                "name" => "unga bunga",
                 "picture" => $picture1,
         ],
         "likesNumber" => "50",
@@ -100,10 +100,6 @@ $posts = [$post1, $post2, $post3];
 
 ?>
 
-<?php
-
-foreach ($posts as $post) {
-    ?>
     <!doctype html>
     <html lang="en">
     <head>
@@ -112,21 +108,118 @@ foreach ($posts as $post) {
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>instagram imitation</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
     </head>
-    <body>
-    <div>
-        <h2><?= $post["title"] ?> </h2>
-        <p><?= $post["captions"] ?> </p>
-        <p>Tags: <?= implode(", ", $post["hashtags"]) ?></p>
-        <h3>Comments</h3>
-        <?php
-        foreach ($post["comments"] as $comment) {
-            ?>
-            <p><?= $comment["author"] ?> : <?= $comment["content"] ?> </p>
-        <?php }
-        ?>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .post {
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+        }
+
+        img {
+            max-width: 500px;
+        }
+
+        button {
+            background: none;
+            border: none;
+            font-weight: bold;
+        }
+
+        .profile {
+            display: flex;
+            align-content: center;
+            justify-content: space-between;
+            #dots {
+                justify-content: end;
+            }
+
+            div {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .profile-picture {
+            max-width: 30px;
+            max-height: 30px;
+            min-height: 30px;
+            min-width: 30px;
+            border-radius: 25px;
+        }
+        .icons-div{
+            display: flex;
+            justify-content: space-between;
+        }
+        .icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        #bookmark {
+            justify-items: end;
+        }
+        #translate{
+            font-size: 10px;
+        }
+        #view{
+            color: gray;
+            font-weight: normal;
+        }
+        div{
+            gap: 15px;
+        }
+    </style>
+<body>
+<?php
+foreach ($posts as $post) {
+    ?>
+    <div class="post">
+        <div class="profile">
+            <div>
+                <img class="profile-picture" src="<?= $picture1 ?>" alt="">
+                <a href=""><?= $post["user"]["name"] ?></a>
+            </div>
+            <button id="dots">...</button>
+        </div>
+        <img src="/photos/picture6.jpg" alt="">
+        <div>
+            <div class="icons-div">
+                <div class="icons">
+                    <div class="bi-heart"></div>
+                    <div class="bi-chat"></div>
+                    <div class="bi-share"></div>
+                </div>
+                <div>
+                    <div class="bi-bookmark" id="bookmark"></div>
+                </div>
+            </div>
+            <p>To se líbí
+                <button><?= $post3["user"]["name"] ?></button>
+                <button>dalším</button>
+            </p>
+            <p><?= $post["user"]["name"] . " " . $post["captions"] ?></p>
+            <button id="translate">Zobrazit Překlad</button>
+            <br>
+            <button id="view">Zobrazit všech <?= count($post["comments"]) ?> komentářů</button>
+        </div>
     </div>
+
     </body>
     </html>
+
 
 <?php }
