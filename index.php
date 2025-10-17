@@ -1,91 +1,98 @@
 <?php
 
+$picture1 = "/photos/picture1.jpg";
+$picture2 = "/photos/picture2.jpg";
+$picture3 = "/photos/picture3.jpg";
+$picture4 = "/photos/picture4.jpg";
+$picture5 = "/photos/picture5.jpg";
+$picture6 = "/photos/picture6.jpg";
+
 $post1 = [
-        "postID" => "hello world",
-        "title" => "Hello World!",
-        "captions" => "this is my content",
+        "postID" => "1",
+        "title" => "first post",
+        "captions" => "this is my content, this content is realy long beacouse i want to trz it",
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
                 "name" => "tomas",
-                "picture" => "this is my content",
+                "picture" => $picture1,
         ],
         "likesNumber" => "50",
         "comments" => [
                 "comment1" => [
-                        "author" => "this is my content",
-                        "authorPicture" => "this is my content",
-                        "content" => "this is my content",],
+                        "author" => "Pepa",
+                        "authorPicture" => $picture2,
+                        "content" => "I hate this",],
                 "comment2" => [
-                        "author" => "this is my content",
-                        "authorPicture" => "this is my content",
-                        "content" => "this is my content",],
+                        "author" => "Franta",
+                        "authorPicture" => $picture3,
+                        "content" => "I do not like it also",],
                 "comment3" => [
-                        "author" => "this is my content",
-                        "authorPicture" => "this is my content",
-                        "content" => "this is my content",
+                        "author" => "tomas",
+                        "authorPicture" => $picture1,
+                        "content" => "thanks guys for support",
                 ],
         ],
-        "picture" => "this is my content",
-        "saves" => "number",
-        "views" => "number",
+        "picture" => $picture4,
+        "saves" => "1",
+        "views" => "5608",
 ];
 $post2 = [
-        "postID" => "hello world",
-        "title" => "Hello World!",
-        "captions" => "this is my content",
+        "postID" => "1",
+        "title" => "first post",
+        "captions" => "this is my content, this content is realy long beacouse i want to trz it",
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
                 "name" => "tomas",
-                "picture" => "this is my content",
+                "picture" => $picture1,
         ],
         "likesNumber" => "50",
         "comments" => [
                 "comment1" => [
-                        "author" => "this is my content",
-                        "authorPicture" => "this is my content",
-                        "content" => "this is my content",],
+                        "author" => "Pepa",
+                        "authorPicture" => $picture2,
+                        "content" => "I hate this",],
                 "comment2" => [
-                        "author" => "this is my content",
-                        "authorPicture" => "this is my content",
-                        "content" => "this is my content",],
+                        "author" => "Franta",
+                        "authorPicture" => $picture3,
+                        "content" => "I do not like it also",],
                 "comment3" => [
-                        "author" => "this is my content",
-                        "authorPicture" => "this is my content",
-                        "content" => "this is my content",
+                        "author" => "tomas",
+                        "authorPicture" => $picture1,
+                        "content" => "thanks guys for support",
                 ],
         ],
-        "picture" => "this is my content",
-        "saves" => "number",
-        "views" => "number",
+        "picture" => $picture4,
+        "saves" => "1",
+        "views" => "5608",
 ];
 $post3 = [
-        "postID" => "hello world",
-        "title" => "Hello World!",
-        "captions" => "this is my content",
+        "postID" => "1",
+        "title" => "first post",
+        "captions" => "this is my content, this content is realy long beacouse i want to trz it",
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
                 "name" => "tomas",
-                "picture" => "this is my content",
+                "picture" => $picture1,
         ],
         "likesNumber" => "50",
         "comments" => [
                 "comment1" => [
-                        "author" => "this is my content",
-                        "authorPicture" => "this is my content",
-                        "content" => "this is my content",],
+                        "author" => "Pepa",
+                        "authorPicture" => $picture2,
+                        "content" => "I hate this",],
                 "comment2" => [
-                        "author" => "this is my content",
-                        "authorPicture" => "this is my content",
-                        "content" => "this is my content",],
+                        "author" => "Franta",
+                        "authorPicture" => $picture3,
+                        "content" => "I do not like it also",],
                 "comment3" => [
-                        "author" => "this is my content",
-                        "authorPicture" => "this is my content",
-                        "content" => "this is my content",
+                        "author" => "tomas",
+                        "authorPicture" => $picture1,
+                        "content" => "thanks guys for support",
                 ],
         ],
-        "picture" => "this is my content",
-        "saves" => "number",
-        "views" => "number",
+        "picture" => $picture4,
+        "saves" => "1",
+        "views" => "5608",
 ];
 
 
