@@ -104,15 +104,29 @@ $posts = [$post1, $post2, $post3];
 
 foreach ($posts as $post) {
     ?>
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>instagram imitation</title>
+    </head>
+    <body>
     <div>
-    <h2><?= $post["title"] ?> </h2>
-    <p><?= $post["captions"] ?> </p>
-    <p>Tags: <?= implode(", ", $post["hashtags"]) ?></p>
-    <h3>Comments</h3>
-    <?php
-    foreach ($post["comments"] as $comment) {
+        <h2><?= $post["title"] ?> </h2>
+        <p><?= $post["captions"] ?> </p>
+        <p>Tags: <?= implode(", ", $post["hashtags"]) ?></p>
+        <h3>Comments</h3>
+        <?php
+        foreach ($post["comments"] as $comment) {
+            ?>
+            <p><?= $comment["author"] ?> : <?= $comment["content"] ?> </p>
+        <?php }
         ?>
-        <p><?= $comment["author"] ?> : <?= $comment["content"] ?> </p>
-    <?php }
-    ?>
+    </div>
+    </body>
+    </html>
+
 <?php }
