@@ -10,7 +10,7 @@ $picture6 = "/photos/picture6.jpg";
 $post1 = [
         "postID" => "1",
         "title" => "first post",
-        "captions" => "this is my content, this content is realy long beacouse i want to trz it",
+        "caption" => "this is my content, this content is realy long beacouse i want to trz it",
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
                 "name" => "tomas",
@@ -39,7 +39,7 @@ $post1 = [
 $post2 = [
         "postID" => "1",
         "title" => "first post",
-        "captions" => "this is my content, this content is realy long beacouse i want to trz it",
+        "caption" => "this is my content, this content is realy long beacouse i want to trz it, and this one is longer than the previos version, if you do not think this is a good idea, than it is your problem.",
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
                 "name" => "tomas",
@@ -68,7 +68,7 @@ $post2 = [
 $post3 = [
         "postID" => "1",
         "title" => "first post",
-        "captions" => "this is my content, this content is realy long beacouse i want to trz it",
+        "caption" => "this is my content, this content is realy long beacouse i want to trz it",
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
                 "name" => "unga bunga",
@@ -109,80 +109,8 @@ $posts = [$post1, $post2, $post3];
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>instagram imitation</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="/style.css">
     </head>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        .post {
-            display: flex;
-            flex-direction: column;
-            justify-self: center;
-        }
-
-        img {
-            max-width: 500px;
-        }
-
-        button {
-            background: none;
-            border: none;
-            font-weight: bold;
-        }
-
-        .profile {
-            display: flex;
-            align-content: center;
-            justify-content: space-between;
-            #dots {
-                justify-content: end;
-            }
-
-            div {
-                display: flex;
-                gap: 10px;
-                align-items: center;
-
-                a {
-                    text-decoration: none;
-                    color: black;
-                    font-weight: bold;
-                }
-            }
-        }
-
-        .profile-picture {
-            max-width: 30px;
-            max-height: 30px;
-            min-height: 30px;
-            min-width: 30px;
-            border-radius: 25px;
-        }
-        .icons-div{
-            display: flex;
-            justify-content: space-between;
-        }
-        .icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        #bookmark {
-            justify-items: end;
-        }
-        #translate{
-            font-size: 10px;
-        }
-        #view{
-            color: gray;
-            font-weight: normal;
-        }
-        div{
-            gap: 15px;
-        }
-    </style>
 <body>
 <?php
 foreach ($posts as $post) {
@@ -195,31 +123,41 @@ foreach ($posts as $post) {
             </div>
             <button id="dots">...</button>
         </div>
-        <img src="/photos/picture6.jpg" alt="">
+        <img src="<?= $post['picture'] ?>" alt="">
         <div>
             <div class="icons-div">
                 <div class="icons">
                     <div class="bi-heart"></div>
                     <div class="bi-chat"></div>
-                    <div class="bi-share"></div>
+                    <div class="bi-send"></div>
                 </div>
                 <div>
                     <div class="bi-bookmark" id="bookmark"></div>
                 </div>
             </div>
-            <p>To se líbí
-                <button><?= $post3["user"]["name"] ?></button>
-                <button>dalším</button>
+            <p class="likes">
+                <button><?= $post3["likesNumber"] ?></button>
+                To se mi líbí
             </p>
-            <p><?= $post["user"]["name"] . " " . $post["captions"] ?></p>
+            <p class="caption">
+                <span class="user-name">
+                    <?= " " . $post["user"]["name"] ?>
+                </span>
+                <?php
+                if (strlen($post["caption"]) < 135) { ?>
+                    <?= $post["caption"] ?>
+                <?php }
+                else {
+                    $lastSpace = strrpos((substr($post["caption"], 0, 135)), ' ');
+                    echo substr($post["caption"], 0, $lastSpace) ?>
+                    <button class="show-more">...</button>
+                <?php } ?>
+            </p>
             <button id="translate">Zobrazit Překlad</button>
             <br>
             <button id="view">Zobrazit všech <?= count($post["comments"]) ?> komentářů</button>
         </div>
     </div>
-
     </body>
     </html>
-
-
 <?php }
