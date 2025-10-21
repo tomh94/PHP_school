@@ -2,12 +2,16 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Arial;
+    font-size: 15px;
 }
 
 .post {
     display: flex;
     flex-direction: column;
     justify-self: center;
+    padding-bottom: 15px;
+    border-bottom: rgba(166, 165, 165, 0.5) 1px solid;
 }
 
 img {
@@ -18,19 +22,26 @@ button {
     background: none;
     border: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .profile {
     display: flex;
-    align-content: center;
+    align-items: center;
     justify-content: space-between;
+
     #dots {
         justify-content: end;
+        font-size: 22px;
+        text-align: center;
+        max-height: 15px;
+        cursor: pointer;
     }
 
     div {
         display: flex;
         gap: 10px;
+        padding-top: 15px;
         align-items: center;
 
         a {
@@ -61,7 +72,7 @@ button {
     justify-items: end;
 }
 #translate{
-    font-size: 10px;
+    font-size: 12px;
 }
 #view{
     color: gray;
@@ -74,8 +85,22 @@ div{
     max-width: 490px;
     .user-name{
         font-weight: bold;
+        cursor: pointer;
     }
 }
 .likes {
     font-weight: bold;
+    font-size: 15px;
+    button{
+        font-size: 15px;
+        cursor: pointer;
+    }
+}
+.bi{
+    font-size: 20px;
+    -webkit-text-stroke: 0.4px currentColor;
+    cursor: pointer;
+}
+.bi:hover{
+    color: blue;
 }

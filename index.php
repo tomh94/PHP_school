@@ -127,12 +127,12 @@ foreach ($posts as $post) {
         <div>
             <div class="icons-div">
                 <div class="icons">
-                    <div class="bi-heart"></div>
-                    <div class="bi-chat"></div>
-                    <div class="bi-send"></div>
+                    <i class="bi bi-heart"></i>
+                    <i class="bi bi-chat"></i>
+                    <i class="bi bi-send"></i>
                 </div>
                 <div>
-                    <div class="bi-bookmark" id="bookmark"></div>
+                    <div class="bi bi-bookmark" id="bookmark"></div>
                 </div>
             </div>
             <p class="likes">
@@ -153,7 +153,7 @@ foreach ($posts as $post) {
                     <button class="show-more">...</button>
                 <?php } ?>
             </p>
-            <button id="translate">Zobrazit Překlad</button>
+            <button id="translate">Zobrazit překlad</button>
             <br>
             <button id="view">Zobrazit všech <?= count($post["comments"]) ?> komentářů</button>
         </div>
