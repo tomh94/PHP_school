@@ -14,7 +14,7 @@ $post1 = [
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
                 "name" => "tomas",
-                "picture" => $picture1,
+                "picture" => $picture6,
         ],
         "likesNumber" => "50",
         "comments" => [
@@ -43,7 +43,7 @@ $post2 = [
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
                 "name" => "tomas",
-                "picture" => $picture1,
+                "picture" => $picture3,
         ],
         "likesNumber" => "50",
         "comments" => [
@@ -61,7 +61,7 @@ $post2 = [
                         "content" => "thanks guys for support",
                 ],
         ],
-        "picture" => $picture4,
+        "picture" => $picture2,
         "saves" => "1",
         "views" => "5608",
 ];
@@ -90,7 +90,7 @@ $post3 = [
                         "content" => "thanks guys for support",
                 ],
         ],
-        "picture" => $picture4,
+        "picture" => $picture5,
         "saves" => "1",
         "views" => "5608",
 ];
@@ -100,25 +100,27 @@ $posts = [$post1, $post2, $post3];
 
 ?>
 
-    <!doctype html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>instagram imitation</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="/style.css">
-    </head>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>instagram imitation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
 <body>
 <?php
 foreach ($posts as $post) {
+    $commentsCase = rand(1, 3);
     ?>
     <div class="post">
         <div class="profile">
             <div>
-                <img class="profile-picture" src="<?= $picture1 ?>" alt="">
+                <img class="profile-picture" src="<?= $post["user"]['picture'] ?>" alt="">
                 <a href=""><?= $post["user"]["name"] ?></a>
             </div>
             <button id="dots">...</button>
@@ -146,8 +148,7 @@ foreach ($posts as $post) {
                 <?php
                 if (strlen($post["caption"]) < 135) { ?>
                     <?= $post["caption"] ?>
-                <?php }
-                else {
+                <?php } else {
                     $lastSpace = strrpos((substr($post["caption"], 0, 135)), ' ');
                     echo substr($post["caption"], 0, $lastSpace) ?>
                     <button class="show-more">...</button>
@@ -155,9 +156,72 @@ foreach ($posts as $post) {
             </p>
             <button id="translate">Zobrazit překlad</button>
             <br>
-            <button id="view">Zobrazit všech <?= count($post["comments"]) ?> komentářů</button>
+            <?php switch ($commentsCase){
+                case 1:?>
+                    <button id="view">Zobrazit všech <?= count($post["comments"]) ?> komentářů</button>
+                <?php break;
+                case 2:?>
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-user">
+                                <div class="avatar">
+                                    <img src="<?= $post['comments']['comment1']['authorPicture'] ?>" alt="">                                </div>
+                                <div class="user-info">
+                                    <div class="username">
+                                        <span><?=$post["comments"]["comment1"]["author"]?></span>
+                                        <span class="comment-text"><?=$post["comments"]["comment1"]["content"]?></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="like-btn">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+                        <div class="comment-meta">
+                            <span>1 h</span>
+                            <span>Odpovědět</span>
+                        </div>
+                    </div>
+            <?php }; ?>
         </div>
     </div>
-    </body>
-    </html>
-<?php }
+<?php };
+?>
+
+<div class="sidebar">
+    <a href="#" class="logo">Instagram</a>
+    <a href="#" class="menu-item">
+        <i class="bi bi-house-door-fill"></i>
+        <span class="menu-text">Domů</span>
+    </a>
+    <a href="#" class="menu-item">
+        <i class="bi bi-search"></i>
+        <span class="menu-text">Hledat</span>
+    </a>
+    <a href="#" class="menu-item">
+        <i class="bi bi-compass"></i>
+        <span class="menu-text">Objevujte</span>
+    </a>
+    <a href="#" class="menu-item">
+        <i class="bi bi-camera-reels"></i>
+        <span class="menu-text">Reels</span>
+    </a>
+    <a href="#" class="menu-item">
+        <i class="bi bi-send"></i>
+        <span class="menu-text">Zprávy</span>
+    </a>
+    <a href="#" class="menu-item">
+        <i class="bi bi-heart"></i>
+        <span class="menu-text">Upozornění</span>
+    </a>
+    <a href="#" class="menu-item">
+        <i class="bi bi-plus-square"></i>
+        <span class="menu-text">Vytvořit</span>
+    </a>
+    <a href="#" class="menu-item">
+        <div><img class = "profile-picture" src="/photos/picture6.jpg" alt=""></div>
+        <span class="menu-text">Profil</span>
+    </a>
+</div>
+</body>
+</html>
