@@ -114,7 +114,9 @@ $posts = [$post1, $post2, $post3];
 </head>
 <body>
 <?php
-foreach ($posts as $post) {
+foreach ($posts
+
+         as $post) {
     $commentsCase = rand(1, 3);
     ?>
     <div class="post">
@@ -156,20 +158,22 @@ foreach ($posts as $post) {
             </p>
             <button id="translate">Zobrazit překlad</button>
             <br>
-            <?php switch ($commentsCase){
-                case 1:?>
+            <?php switch ($commentsCase) {
+                case 1:
+                    ?>
                     <button id="view">Zobrazit všech <?= count($post["comments"]) ?> komentářů</button>
-                <?php break;
-                case 2:?>
+                    <?php break;
+                case 2:
+                    ?>
                     <div class="comment">
                         <div class="comment-header">
                             <div class="comment-user">
                                 <div class="avatar">
-                                    <img src="<?= $post['comments']['comment1']['authorPicture'] ?>" alt="">                                </div>
+                                    <img src="<?= $post['comments']['comment1']['authorPicture'] ?>" alt=""></div>
                                 <div class="user-info">
                                     <div class="username">
-                                        <span><?=$post["comments"]["comment1"]["author"]?></span>
-                                        <span class="comment-text"><?=$post["comments"]["comment1"]["content"]?></span>
+                                        <span><?= $post["comments"]["comment1"]["author"] ?></span>
+                                        <span class="comment-text"><?= $post["comments"]["comment1"]["content"] ?></span>
                                     </div>
                                 </div>
                             </div>
@@ -182,11 +186,37 @@ foreach ($posts as $post) {
                             <span>Odpovědět</span>
                         </div>
                     </div>
-            <?php }; ?>
+                    <?php break;
+                case 3:
+                    foreach ($post['comments'] as $comment) { ?>
+                        <div class="comment">
+                            <div class="comment-header">
+                                <div class="comment-user">
+                                    <div class="avatar">
+                                        <img src="<?= $comment['authorPicture'] ?>" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <div class="username">
+                                            <span><?= $comment['author'] ?></span>
+                                            <span class="comment-text"><?= $comment['content'] ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="like-btn">
+                                    <i class="bi bi-heart"></i>
+                                </button>
+                            </div>
+                            <div class="comment-meta">
+                                <span>1 h</span>
+                                <span>Odpovědět</span>
+                            </div>
+                        </div>
+                    <?php }
+                    break;
+            } ?>
         </div>
     </div>
-<?php };
-?>
+<?php } ?>
 
 <div class="sidebar">
     <a href="#" class="logo">Instagram</a>
@@ -219,7 +249,7 @@ foreach ($posts as $post) {
         <span class="menu-text">Vytvořit</span>
     </a>
     <a href="#" class="menu-item">
-        <div><img class = "profile-picture" src="/photos/picture6.jpg" alt=""></div>
+        <div><img class="profile-picture" src="/photos/picture6.jpg" alt=""></div>
         <span class="menu-text">Profil</span>
     </a>
 </div>
