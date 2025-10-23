@@ -28,7 +28,7 @@ $post1 = [
                         "content" => "I do not like it also",],
                 "comment3" => [
                         "author" => "tomas",
-                        "authorPicture" => $picture1,
+                        "authorPicture" => $picture6,
                         "content" => "thanks guys for support",
                 ],
         ],
@@ -42,7 +42,7 @@ $post2 = [
         "caption" => "this is my content, this content is realy long beacouse i want to trz it, and this one is longer than the previos version, if you do not think this is a good idea, than it is your problem.",
         "hashtags" => ["php", "html", "css", "js"],
         "user" => [
-                "name" => "tomas",
+                "name" => "jarmilaSu",
                 "picture" => $picture3,
         ],
         "likesNumber" => "50",
@@ -57,7 +57,7 @@ $post2 = [
                         "content" => "I do not like it also",],
                 "comment3" => [
                         "author" => "tomas",
-                        "authorPicture" => $picture1,
+                        "authorPicture" => $picture3,
                         "content" => "thanks guys for support",
                 ],
         ],
